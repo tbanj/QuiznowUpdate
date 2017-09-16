@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="que3_ans1_text" type="id" />
+    <item name="que3_ans4_text" type="id" />
+    <item name="que3_ans2_text" type="id" />
+    <item name="que3_ans3_text" type="id" />
+</resources>

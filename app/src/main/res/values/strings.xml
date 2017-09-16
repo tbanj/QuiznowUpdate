@@ -1,0 +1,95 @@
+<resources>
+    <string name="app_name">Quiznow</string>
+    <string name="full_name_text">Input Your Name</string>
+    <string name="answer_hint_text">Input Your Answer</string>
+    <string name="answer_empty_name">empty, we urge you to input your name</string>
+
+
+    <string name="que1_subject_text">Qustion 1</string>
+    <string name="que1_text">Andela Epic Tower is located at which city in Nigeria ?</string>
+    <string name="que1_ans_text">Ilupeju</string>
+
+
+
+    <string name="que2_subject_text">Qustion 3</string>
+    <string name="que2_text">What is XML acronym  for ?</string>
+    <string name="que2_ans_text">Extensible Markup Language</string>
+
+    <string name="que3_subject_text">Qustion 2</string>
+    <string name="que3_text">Commonly use View Groups are ?</string>
+    <string name="que3_ans1_text">TextView</string>
+    <string name="que3_ans2_text">EditText</string>
+    <string name="que3_ans3_text">TextInput</string>
+    <string name="que3_ans4_text">ResourceView</string>
+
+
+
+
+    <string name="que4_subject_text">Qustion 4</string>
+    <string name="que4_text">Which Layout that can only accomododate one child ?</string>
+    <string name="que4_ans1_text">RelativeLayout</string>
+    <string name="que4_ans2_text">ScrollView</string>
+    <string name="que4_ans3_text">LinearLayout</string>
+    <string name="que4_ans4_text">GridLayout</string>
+
+
+    <string name="que5_subject_text">Qustion 5</string>
+    <string name="que5_text">Can Hybrid framework use for app development ?</string>
+    <string name="que5_ans1_text">True</string>
+    <string name="que5_ans2_text">False</string>
+
+
+    <string name="que6_subject_text">Qustion 6</string>
+    <string name="que6_text">Which are types of Markup Language ?</string>
+    <string name="que6_ans1_text">JAVASCRIPT</string>
+    <string name="que6_ans2_text">XML</string>
+    <string name="que6_ans3_text">LaTeX</string>
+    <string name="que6_ans4_text">PYTON</string>
+
+    <string name="que7_subject_text">Qustion 7</string>
+    <string name="que7_text">Which is not an important folder within an Android project ?</string>
+    <string name="que7_ans1_text">bin/</string>
+    <string name="que7_ans2_text">res/</string>
+    <string name="que7_ans3_text">git/</string>
+    <string name="que7_ans4_text">assets/</string>
+
+    <string name="que8_subject_text">Qustion 8</string>
+    <string name="que8_text">What is ANR ?</string>
+    <string name="que8_ans1_text">Application Not Responding</string>
+
+
+    <string name="que9_subject_text">Qustion 9</string>
+    <string name="que9_text">The current recommended minimum SDK API is ?</string>
+    <string name="que9_ans1_text">API 13</string>
+    <string name="que9_ans2_text">API 15</string>
+    <string name="que9_ans3_text">API 19</string>
+    <string name="que9_ans4_text">API 21</string>
+
+    <string name="que10_subject_text">Qustion 10</string>
+    <string name="que10_text">What is the first android version number for Honeycomb ?</string>
+    <string name="que10_ans1_text">4.0</string>
+    <string name="que10_ans2_text">3.1</string>
+    <string name="que10_ans3_text">4.1</string>
+    <string name="que10_ans4_text">3.0</string>
+
+    <string name="submit_que_text">SUBMIT</string>
+
+    <string name="reset_que_text">Restart</string>
+    <string name="reset_comment">Try Again, maybe you can get it right this time!! </string>
+
+    <string name="answer_subject_text">Your are yet to answer any question</string>
+    <string name="answer_comment_text">Score is:</string>
+    <string name="answer_bad_toast_comment">Take your time before you choose the options</string>
+    <string name="answer_average_toast_comment">You can do more</string>
+    <string name="answer_good_toast_comment">You are genius</string>
+
+
+    <string name="que_correct">CORRECT</string>
+    <string name="que_wrong">WRONG</string>
+
+
+
+
+
+
+</resources>

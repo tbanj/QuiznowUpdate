@@ -1,0 +1,27 @@
+<resources>
+    <!-- Base application theme. -->
+    <!-- for your  apptheme parent color make use of any Theme.AppCompat series-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+
+        <!-- Primary theme color of the app (sets background color of app bar) -->
+        <!-- Make use 500 color code for colorPrimary and 700 color-->
+        <item name="colorPrimary">#FF4081</item>
+
+
+        <!-- Background color of buttons in the app -->
+        <item name="colorButtonNormal">#FF4081</item>
+
+        <!-- Background color of buttons in the app -->
+        <!-- to make use of android:navigationBarColor or other android: for your app color your app min of api 21 above which is not goo -->
+        <!-- cos your app will be limited some particulars users only -->
+        <!--<item name="android:navigationBarColor">@android:color/holo_green_light</item>
+         -->
+
+        <!--Darker variant for the status bar and contextual app bars-->
+        <item name="colorPrimaryDark">#FF4081</item>
+        <!--
+                <Theme UI controls like checkboxes and text fields >-->
+                <item name="colorAccent">#FF4081</item>
+
+    </style>
+</resources>

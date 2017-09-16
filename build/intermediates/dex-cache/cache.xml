@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Engr Wahab\.android\build-cache\49b9ec17b9df77eddd1bfddf08d57ac1874f6fd6\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="C:\Users\Engr Wahab\AndroidStudioProjects\Quiznow\app\build\intermediates\pre-dexed\debug\classes_061b9431bf52b9cc32a57e7136067a089732ec7c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.0-alpha7\constraint-layout-solver-1.0.0-alpha7.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="439eeb5ffd54cbd18db0a6aea471e8356f19fc36">
+        <dex dex="C:\Users\Engr Wahab\AndroidStudioProjects\Quiznow\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.0-alpha7_5a7378b5f4e08eea4c84519ac10dc3a108e5bb51.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Engr Wahab\.android\build-cache\489346e06f4ab3cb8d2e6cb1f96bec6988ba6095\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="C:\Users\Engr Wahab\AndroidStudioProjects\Quiznow\app\build\intermediates\pre-dexed\debug\classes_a676c2ace6668e8c0aa563975c317f76c2af794c.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Engr Wahab\AndroidStudioProjects\Quiznow\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ed8967151a052880d2f2b29614fff30c2dc3ddd5">
+        <dex dex="C:\Users\Engr Wahab\AndroidStudioProjects\Quiznow\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_367ceb6a3a38317cfd2cb967e168be3bcaa81af7\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Engr Wahab\.android\build-cache\f452a49f9887f8aaeac3f6b69b22dbb52d3921b5\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="C:\Users\Engr Wahab\AndroidStudioProjects\Quiznow\app\build\intermediates\pre-dexed\debug\classes_4b949b026fae43b628d5113eba57064bc5b771fa.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Engr Wahab\AndroidStudioProjects\Quiznow\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="C:\Users\Engr Wahab\AndroidStudioProjects\Quiznow\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_6505be7f04e0140f16d3c9961a7095b8132a9dea\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Engr Wahab\.android\build-cache\e547a8650c5f58244c7bc047dda135b52baabb5e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="541a2ad68dc68aa49795821f8280b7624e6a0c9b">
+        <dex dex="C:\Users\Engr Wahab\AndroidStudioProjects\Quiznow\app\build\intermediates\pre-dexed\debug\classes_e8e118182dbb65713b3b7501d71e6b4a989ffe73.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Engr Wahab\.android\build-cache\f452a49f9887f8aaeac3f6b69b22dbb52d3921b5\output\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="C:\Users\Engr Wahab\AndroidStudioProjects\Quiznow\app\build\intermediates\pre-dexed\debug\internal_impl-23.4.0_707f74ad9fc552d60cd38dca234c53a4af3965c9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Engr Wahab\.android\build-cache\4fd44fad25f8edab271964a926cebd5ef688efe2\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="C:\Users\Engr Wahab\AndroidStudioProjects\Quiznow\app\build\intermediates\pre-dexed\debug\classes_e60bd933f29f6a0f259cee51735815c663b0a3b9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="C:\Users\Engr Wahab\AndroidStudioProjects\Quiznow\app\build\intermediates\pre-dexed\debug\support-annotations-23.4.0_fc18a0fdc80391aaf9a93e629f1a6f03cf6a9cf4.jar" />
+    </item>
+
+</items>
