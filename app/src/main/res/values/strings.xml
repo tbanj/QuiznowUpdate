@@ -5,6 +5,8 @@
     <string name="answer_empty_name">empty, we urge you to input your name</string>
 
 
+    <string name="menu_quizz"> ⋮ </string>
+
     <string name="que1_subject_text">Qustion 1</string>
     <string name="que1_text">Andela Epic Tower is located at which city in Nigeria ?</string>
     <string name="que1_ans_text">Ilupeju</string>
@@ -73,6 +75,8 @@
     <string name="que10_ans4_text">3.0</string>
 
     <string name="submit_que_text">SUBMIT</string>
+    <string name="submit_hint">Once you click on the submit all your answers will be cleared</string>
+
 
     <string name="reset_que_text">Restart</string>
     <string name="reset_comment">Try Again, maybe you can get it right this time!! </string>

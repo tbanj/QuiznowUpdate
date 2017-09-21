@@ -1,21 +1,17 @@
 package com.example.android.quiznow;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Context;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import static android.R.attr.checked;
-import static android.os.Build.VERSION_CODES.BASE;
-import static com.example.android.quiznow.R.id.que2_edit_text;
-import static com.example.android.quiznow.R.id.que4_ans3_radiobutton;
-import static com.example.android.quiznow.R.string.que1_ans_text;
 
 public class MainActivity extends AppCompatActivity {
     String queOne = "";
@@ -244,19 +240,16 @@ public class MainActivity extends AppCompatActivity {
         String totalScore = "Total score is: 10";
         a = submitAns();
         if (a <= 3) {
-
             Toast.makeText(this, getString(R.string.answer_bad_toast_comment), Toast.LENGTH_SHORT).show();
 
 
         }
         if (a >= 4 && a <= 7) {
-
             Toast.makeText(this, getString(R.string.answer_average_toast_comment), Toast.LENGTH_SHORT).show();
 
         }
 
         if (a >= 8) {
-
             Toast.makeText(this, getString(R.string.answer_good_toast_comment), Toast.LENGTH_SHORT).show();
         }
 
@@ -267,7 +260,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (ques3Option1CheckBox.isChecked()) {
-
             ques3Option1CheckBox.toggle();
 
         }
@@ -345,6 +337,15 @@ public class MainActivity extends AppCompatActivity {
         queFourradioGroup.clearCheck();
         queFiveradioGroup.clearCheck();
         queNineradioGroup.clearCheck();
+
+        /***
+         * Setting the EditTextView to blank after the answers has been collected this
+         * is use for Name EditText, Ques 1, Ques 2, and Ques 8
+         */
+        //studentNameEditText.setText("");
+        queOneEditText.setText("");
+        queTwoEditText.setText("");
+        queEightEditText.setText("");
 
         //studentName="WRONG";
         //      queOneAnswer="WRONG";
@@ -602,7 +603,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void setEditTextEight(String queEightAnswer) {
+    public void setEditTextEight(String queEightAnswer) {
         EditText EditTextEight = (EditText) findViewById(R.id.que8_edit_text);
         EditTextEight.setText(" " + queEightAnswer);
     }
@@ -657,6 +658,31 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return baseScore;
+    }
+    // COMPLETED (8) Override onCreateOptionsMenu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // COMPLETED (9) Within onCreateOptionsMenu, use getMenuInflater().inflate to inflate the menu
+        getMenuInflater().inflate(R.menu.main, menu);
+        // COMPLETED (10) Return true to display your menu
+        return true;
+    }
+
+    // COMPLETED (11) Override onOptionsItemSelected
+    // COMPLETED (12) Within onOptionsItemSelected, get the ID of the item that was selected
+    // COMPLETED (13) If the item's ID is R.id.action_search, show a Toast and return true to tell Android that you've handled this menu click
+    // COMPLETED (14) Don't forgot to call .show() on your Toast
+    // COMPLETED (15) If you do NOT handle the menu click, return super.onOptionsItemSelected to let Android handle the menu click
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int itemThatWasClickedId = item.getItemId();
+        if (itemThatWasClickedId == R.id.menum_quiz) {
+            Context context = MainActivity.this;
+            String textToShow = "Search clicked";
+            Toast.makeText(context, textToShow, Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
 
