@@ -21,6 +21,7 @@
     <string name="que3_ans2_text">EditText</string>
     <string name="que3_ans3_text">TextInput</string>
     <string name="que3_ans4_text">ResourceView</string>
+    <string name="menu_title"> ⋮ </string>
 
 
 

@@ -1,9 +1,13 @@
 package com.example.android.quiznow;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -11,16 +15,10 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import static android.R.attr.checked;
-import static android.os.Build.VERSION_CODES.BASE;
-import static com.example.android.quiznow.R.id.que2_edit_text;
-import static com.example.android.quiznow.R.id.que4_ans3_radiobutton;
-import static com.example.android.quiznow.R.string.que1_ans_text;
-
 public class MainActivity extends AppCompatActivity {
-    String queOne = "";
-    String queTwo = "";
-    String queEight = "";
+    String queOne ;
+    String queTwo ;
+    String queEight ;
     int a;
     boolean ques3Option1, ques3Option2, ques3Option3, ques3Option4;
     CheckBox ques3Option1CheckBox, ques3Option2CheckBox, ques3Option3CheckBox, ques3Option4CheckBox;
@@ -59,6 +57,10 @@ public class MainActivity extends AppCompatActivity {
     String queNineAnswer;
     String queTenAnswer;
 
+    private Toast answertoast= null;
+    private Toast optionRefreshToast = null;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +72,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
+
     public void submitQuestion(View view) {
+
 
         /**
          * Username
@@ -79,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
         EditText studentNameEditText = (EditText) findViewById(R.id.full_edit_text);
         studentName = studentNameEditText.getText().toString();
+
         if (studentNameEditText.getText().toString().isEmpty()) {
             studentName = getString(R.string.answer_empty_name);
         }
@@ -242,22 +248,24 @@ public class MainActivity extends AppCompatActivity {
         String score_comment = getString(R.string.answer_comment_text);
         String username = "Your name is " + studentName;
         String totalScore = "Total score is: 10";
+
+
         a = submitAns();
         if (a <= 3) {
 
-            Toast.makeText(this, getString(R.string.answer_bad_toast_comment), Toast.LENGTH_SHORT).show();
+            answertoast.makeText(this, getString(R.string.answer_bad_toast_comment), Toast.LENGTH_SHORT).show();
 
 
         }
         if (a >= 4 && a <= 7) {
 
-            Toast.makeText(this, getString(R.string.answer_average_toast_comment), Toast.LENGTH_SHORT).show();
+            answertoast.makeText(this, getString(R.string.answer_average_toast_comment), Toast.LENGTH_SHORT).show();
 
         }
 
         if (a >= 8) {
 
-            Toast.makeText(this, getString(R.string.answer_good_toast_comment), Toast.LENGTH_SHORT).show();
+            answertoast.makeText(this, getString(R.string.answer_good_toast_comment), Toast.LENGTH_SHORT).show();
         }
 
 
@@ -265,86 +273,18 @@ public class MainActivity extends AppCompatActivity {
         if (a > 1) {
             a = 0;
         }
+        //displaySummary();
+        //answerSummary(studentName,queOneAnswer,queTwoAnswer,queThreeAnswer,queFourAnswer,queFiveAnswer,queSixAnswer,queSevenAnswer,queEightAnswer,queNineAnswer,queTenAnswer);
 
-        if (ques3Option1CheckBox.isChecked()) {
+        restQuestion();
 
-            ques3Option1CheckBox.toggle();
+        //restQuestion();
 
-        }
-        if (ques3Option2CheckBox.isChecked()) {
-            ques3Option2CheckBox.toggle();
-        }
 
-        if (ques3Option3CheckBox.isChecked()) {
 
-            ques3Option3CheckBox.toggle();
-
-        }
-        if (ques3Option4CheckBox.isChecked()) {
-            ques3Option4CheckBox.toggle();
-        }
 
         //
-        if (ques6Option1CheckBox.isChecked()) {
 
-            ques6Option1CheckBox.toggle();
-
-        }
-        if (ques6Option2CheckBox.isChecked()) {
-            ques6Option2CheckBox.toggle();
-        }
-
-        if (ques6Option3CheckBox.isChecked()) {
-
-            ques6Option3CheckBox.toggle();
-
-        }
-        if (ques6Option4CheckBox.isChecked()) {
-            ques6Option4CheckBox.toggle();
-        }
-
-        //
-        if (ques7Option1CheckBox.isChecked()) {
-
-            ques7Option1CheckBox.toggle();
-
-        }
-        if (ques7Option2CheckBox.isChecked()) {
-            ques7Option2CheckBox.toggle();
-        }
-
-        if (ques7Option3CheckBox.isChecked()) {
-
-            ques7Option3CheckBox.toggle();
-
-        }
-        if (ques7Option4CheckBox.isChecked()) {
-            ques7Option4CheckBox.toggle();
-        }
-
-        //
-        if (ques10Option1CheckBox.isChecked()) {
-
-            ques10Option1CheckBox.toggle();
-
-        }
-        if (ques10Option2CheckBox.isChecked()) {
-            ques10Option2CheckBox.toggle();
-        }
-
-        if (ques10Option3CheckBox.isChecked()) {
-
-            ques10Option3CheckBox.toggle();
-
-        }
-        if (ques10Option4CheckBox.isChecked()) {
-            ques10Option4CheckBox.toggle();
-        }
-
-
-        queFourradioGroup.clearCheck();
-        queFiveradioGroup.clearCheck();
-        queNineradioGroup.clearCheck();
 
         //studentName="WRONG";
         //      queOneAnswer="WRONG";
@@ -543,6 +483,11 @@ public class MainActivity extends AppCompatActivity {
         TextView quantityTextView = (TextView) findViewById(R.id.answer_subject_text_view);
         quantityTextView.setText(" " + numberOfQuantity);
     }
+    private void displaySummary(String numberOfSummary) {
+        TextView summaryTextView = (TextView) findViewById(R.id.answer_subject_text_summary);
+        summaryTextView.setText(" " + numberOfSummary);
+    }
+
 
     /**
      * private void displayQuantityInt(int numberOfQuantityInt) {
@@ -551,62 +496,37 @@ public class MainActivity extends AppCompatActivity {
      * }
      **/
 
-    public void restQuestion(View view) {
-        studentName = "";
-        queOneAnswer = "";
-        queTwoAnswer = "";
-        queEightAnswer = "";
 
-        if (ques3Option1CheckBox.isChecked()) {
-
-            ques3Option1CheckBox.toggle();
-
-        }
-        if (ques3Option2CheckBox.isChecked()) {
-            ques3Option2CheckBox.toggle();
-        }
-
-        if (ques3Option3CheckBox.isChecked()) {
-
-            ques3Option3CheckBox.toggle();
-
-        }
-
-
-        setEditTextStudentName(studentName);
-        setEditTextOne(queOneAnswer);
-        setEditTextTwo(queTwoAnswer);
-        setEditTextEight(queEightAnswer);
-        //String priceMessage =createOrderSummary(price, quantity, hasWhippedCream, addname, haschocolate);
-        //Log.v("MainActivity", priceMessage);
-
-        displayQuantity(getString(R.string.reset_comment));
-
-
-    }
 
     private void setEditTextStudentName(String StudentName) {
         EditText EditTextStudentName = (EditText) findViewById(R.id.full_edit_text);
-        EditTextStudentName.setText(" " + StudentName);
+        EditTextStudentName.setText(StudentName);
     }
+
 
 
     private void setEditTextOne(String queOneAnswer) {
         EditText EditTextOne = (EditText) findViewById(R.id.que1_edit_text);
-        EditTextOne.setText(" " + queOneAnswer);
+        EditTextOne.setText(queOneAnswer);
     }
 
     private void setEditTextTwo(String queTwoAnswer) {
         EditText EditTextTwo = (EditText) findViewById(R.id.que2_edit_text);
-        EditTextTwo.setText(" " + queTwoAnswer);
+        EditTextTwo.setText(queTwoAnswer);
     }
 
 
     private void setEditTextEight(String queEightAnswer) {
         EditText EditTextEight = (EditText) findViewById(R.id.que8_edit_text);
-        EditTextEight.setText(" " + queEightAnswer);
+        EditTextEight.setText(queEightAnswer);
     }
 
+    /**
+    private void ques6Option4Check(Boolean queEightAnswer) {
+        ques6Option4CheckBox = (CheckBox) findViewById(R.id.que6_ans4_checkbox);
+        ques6Option4 = ques6Option4CheckBox.isChecked();
+    }
+**/
 
     private int submitAns() {
 
@@ -658,6 +578,238 @@ public class MainActivity extends AppCompatActivity {
 
         return baseScore;
     }
+    public  void submitShare(View view){
+        String answerSummaryIntent = answerSummary(studentName,queOneAnswer,queTwoAnswer,
+                queThreeAnswer,queFourAnswer,queFiveAnswer,queSixAnswer,queSevenAnswer,
+                queEightAnswer,queNineAnswer,queTenAnswer);
+        displayQuantity(getString(R.string.reset_comment));
+        Intent intent = new Intent(Intent.
+                ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Exam Score for "+ studentName);
+        intent.putExtra(Intent.EXTRA_TEXT, answerSummaryIntent);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+
+    }
+    private void restQuestion() {
+        //studentNamee = "";
+       // queOneAnswerr = "";
+        //queTwoAnswerr = "";
+       // queEightAnswer = "";
+
+        ques3Option1CheckBox = (CheckBox) findViewById(R.id.que3_ans1_checkbox);
+        ques3Option1 = ques3Option1CheckBox.isChecked();
+        ques3Option2CheckBox = (CheckBox) findViewById(R.id.que3_ans2_checkbox);
+        ques3Option2 = ques3Option2CheckBox.isChecked();
+        ques3Option3CheckBox = (CheckBox) findViewById(R.id.que3_ans3_checkbox);
+        ques3Option3 = ques3Option3CheckBox.isChecked();
+        ques3Option4CheckBox = (CheckBox) findViewById(R.id.que3_ans4_checkbox);
+        ques3Option4 = ques3Option4CheckBox.isChecked();
+
+        queFourradioGroup = (RadioGroup) findViewById(R.id.que4_group_radiobutton);
+        queFourradioGroup.getCheckedRadioButtonId();
+        queFiveradioGroup = (RadioGroup) findViewById(R.id.que5_group_radiobutton);
+        queFiveradioGroup.getCheckedRadioButtonId();
+        queNineradioGroup = (RadioGroup) findViewById(R.id.que9_group_radiobutton);
+        queNineradioGroup.getCheckedRadioButtonId();
+
+
+
+        ques6Option1CheckBox = (CheckBox) findViewById(R.id.que6_ans1_checkbox);
+        ques6Option1 = ques6Option1CheckBox.isChecked();
+        ques6Option2CheckBox = (CheckBox) findViewById(R.id.que6_ans2_checkbox);
+        ques6Option2 = ques6Option2CheckBox.isChecked();
+        ques6Option3CheckBox = (CheckBox) findViewById(R.id.que6_ans3_checkbox);
+        ques6Option3 = ques6Option3CheckBox.isChecked();
+        ques6Option4CheckBox = (CheckBox) findViewById(R.id.que6_ans4_checkbox);
+        ques6Option4 = ques6Option4CheckBox.isChecked();
+
+        ques7Option1CheckBox = (CheckBox) findViewById(R.id.que7_ans1_checkbox);
+        ques7Option1 = ques7Option1CheckBox.isChecked();
+        ques7Option2CheckBox = (CheckBox) findViewById(R.id.que7_ans2_checkbox);
+        ques7Option2 = ques7Option2CheckBox.isChecked();
+        ques7Option3CheckBox = (CheckBox) findViewById(R.id.que7_ans3_checkbox);
+        ques7Option3 = ques7Option3CheckBox.isChecked();
+        ques7Option4CheckBox = (CheckBox) findViewById(R.id.que7_ans4_checkbox);
+        ques7Option4 = ques7Option4CheckBox.isChecked();
+
+        ques10Option1CheckBox = (CheckBox) findViewById(R.id.que10_ans1_checkbox);
+        ques10Option1 = ques10Option1CheckBox.isChecked();
+        ques10Option2CheckBox = (CheckBox) findViewById(R.id.que10_ans2_checkbox);
+        ques10Option2 = ques10Option2CheckBox.isChecked();
+        ques10Option3CheckBox = (CheckBox) findViewById(R.id.que10_ans3_checkbox);
+        ques10Option3 = ques10Option3CheckBox.isChecked();
+        ques10Option4CheckBox = (CheckBox) findViewById(R.id.que10_ans4_checkbox);
+        ques10Option4 = ques10Option4CheckBox.isChecked();
+
+        if (ques3Option1==false ) {
+            ques3Option1CheckBox.setChecked(false);
+        }
+        if (ques3Option1CheckBox.isChecked()) {
+            ques3Option1CheckBox.toggle();
+        }
+        if (ques3Option2==false ) {
+            //ques3Option1CheckBox=null;
+            ques3Option2CheckBox.setChecked(false);
+        }
+        if (ques3Option2CheckBox.isChecked()) {
+            ques3Option2CheckBox.toggle();
+        }
+
+        if (ques3Option3==false ) {
+            //ques3Option1CheckBox=null;
+            ques3Option3CheckBox.setChecked(false);
+        }
+        if (ques3Option3CheckBox.isChecked()) {
+
+            ques3Option3CheckBox.toggle();
+        }
+
+        if (ques3Option4==false ) {
+            //ques3Option1CheckBox=null;
+            ques3Option4CheckBox.setChecked(false);
+        }
+        if (ques3Option4CheckBox.isChecked()) {
+            ques3Option4CheckBox.toggle();
+        }
+
+        if (ques6Option1==false ) {
+            //ques3Option1CheckBox=null;
+            ques6Option1CheckBox.setChecked(false);
+        }
+        if (ques6Option1CheckBox.isChecked()) {
+            ques6Option1CheckBox.toggle();
+        }
+        if (ques6Option2==false ) {
+            ques6Option2CheckBox.setChecked(false);
+        }
+        if (ques6Option2CheckBox.isChecked()) {
+            ques6Option2CheckBox.toggle();
+        }
+
+        if (ques6Option3==false ) {
+            ques6Option3CheckBox.setChecked(false);
+        }
+        if (ques6Option3CheckBox.isChecked()) {
+
+            ques6Option3CheckBox.toggle();
+
+        }
+
+        if (ques6Option4==false ) {
+            ques6Option4CheckBox.setChecked(false);
+        }
+        if (ques6Option4CheckBox.isChecked()) {
+            ques6Option4CheckBox.toggle();
+        }
+
+        if (ques7Option1==false ) {
+            ques7Option1CheckBox.setChecked(false);
+        }
+        if (ques7Option1CheckBox.isChecked()) {
+            ques7Option1CheckBox.toggle();
+        }
+
+        if (ques7Option2==false ) {
+            ques7Option2CheckBox.setChecked(false);
+        }
+        if (ques7Option2CheckBox.isChecked()) {
+            ques7Option2CheckBox.toggle();
+        }
+
+        if (ques7Option3==false ) {
+            ques7Option3CheckBox.setChecked(false);
+        }
+        if (ques7Option3CheckBox.isChecked()) {
+
+            ques7Option3CheckBox.toggle();
+        }
+
+        if (ques7Option4==false ) {
+            ques7Option4CheckBox.setChecked(false);
+        }
+        if (ques7Option4CheckBox.isChecked()) {
+            ques7Option4CheckBox.toggle();
+        }
+        if (ques10Option1==false ) {
+            ques10Option1CheckBox.setChecked(false);
+        }
+        if (ques10Option1CheckBox.isChecked()) {
+            ques10Option1CheckBox.toggle();
+        }
+
+        if (ques10Option2==false ) {
+            ques10Option2CheckBox.setChecked(false);
+        }
+        if (ques10Option2CheckBox.isChecked()) {
+            ques10Option2CheckBox.toggle();
+        }
+
+        if (ques10Option3==false ) {
+            ques10Option3CheckBox.setChecked(false);
+        }
+        if (ques10Option3CheckBox.isChecked()) {
+            ques10Option3CheckBox.toggle();
+        }
+
+        if (ques10Option4==false ) {
+            ques10Option4CheckBox.setChecked(false);
+        }
+        if (ques10Option4CheckBox.isChecked()) {
+            ques10Option4CheckBox.toggle();
+        }
+
+        queFourradioGroup.clearCheck();
+        queFiveradioGroup.clearCheck();
+        queNineradioGroup.clearCheck();
+
+
+
+
+
+
+
+        setEditTextStudentName("");
+        setEditTextOne("");
+        setEditTextTwo("");
+        setEditTextEight("");
+        //String priceMessage =createOrderSummary(price, quantity, hasWhippedCream, addname, haschocolate);
+        //Log.v("MainActivity", priceMessage);
+
+        //displayQuantity(getString(R.string.reset_comment));
+
+
+    }
+
+    public void resetButton(View view){
+        restQuestion();
+        //ques3Option1CheckBox = null;
+
+
+        displayQuantity(getString(R.string.reset_comment));
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // COMPLETED (9) Within onCreateOptionsMenu, use getMenuInflater().inflate to inflate the menu
+        getMenuInflater().inflate(R.menu.main, menu);
+        // COMPLETED (10) Return true to display your menu
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int itemThatWasClickedId = item.getItemId();
+        if (itemThatWasClickedId == R.id.share_menu) {
+            Context context = MainActivity.this;
+            String textToShow = "Option Refresh";
+            restQuestion();
+            optionRefreshToast.makeText(context, textToShow, Toast.LENGTH_SHORT).show();
+            //displayQuantity("Option Refresh");
+            displayQuantity(getString(R.string.reset_comment));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
-
-
