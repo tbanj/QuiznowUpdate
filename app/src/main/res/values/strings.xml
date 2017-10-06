@@ -2,7 +2,7 @@
     <string name="app_name">Quiznow</string>
     <string name="full_name_text">Input Your Name</string>
     <string name="answer_hint_text">Input Your Answer</string>
-    <string name="answer_empty_name">empty, we urge you to input your name</string>
+    <string name="answer_empty_name">your name is empty, we urge you to input your name</string>
 
 
     <string name="menu_quizz"> ⋮ </string>
@@ -23,6 +23,7 @@
     <string name="que3_ans2_text">EditText</string>
     <string name="que3_ans3_text">TextInput</string>
     <string name="que3_ans4_text">ResourceView</string>
+    <string name="menu_title"> ⋮ </string>
 
 
 
